@@ -36,7 +36,7 @@ public:
     }
 };
 int main() {
-    // 포인터 배열 생성
+    // animal의 보유 클래스만큼의 포인터 배열 생성
     Animal* animals[] = { new Dog(), new Cat(), new Cow() };
 
     // 배열 순회하며 각 동물의 소리 출력
