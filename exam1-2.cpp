@@ -36,20 +36,18 @@ public:
     }
 };
 int main() {
-    // Creating objects of derived classes
-    Animal* dog = new Dog();
-    Animal* cat = new Cat();
-    Animal* cow = new Cow();
+    // 포인터 배열 생성
+    Animal* animals[] = { new Dog(), new Cat(), new Cow() };
 
-    // 클래스 포인터로 Animal 클래스의 파생클래스를 통해 makeSound() 함수 호출 
-    dog->makeSound(); // Output: 월월
-    cat->makeSound(); // Output: 야옹
-    cow->makeSound(); // Output: 음메
+    // 배열 순회하며 각 동물의 소리 출력
+    for (Animal* animal : animals) {
+        animal->makeSound();
+    }
 
-    // Cleaning up
-    delete dog;
-    delete cat;
-    delete cow;
+    // 메모리 해제
+    for (Animal* animal : animals) {
+        delete animal;
+    }
 
     return 0;
 }
