@@ -3,36 +3,36 @@
 
 using namespace std;
 
-// Base class
+// ê¸°ë³¸ Animal Class
 class Animal {
 public:
-    // °¡»ó ÇÔ¼ö makeSound ¼±¾ğ
+    // ê°€ìƒ í•¨ìˆ˜ makeSound ì„ ì–¸
     virtual void makeSound() const = 0;
 
-    // °¡»ó ¼Ò¸êÀÚ
+    // ê°€ìƒ ì†Œë©¸ì
     virtual ~Animal() {}
 };
 
-// ÆÄ»ı Å¬·¡½º: Dog
+// íŒŒìƒ í´ë˜ìŠ¤: Dog
 class Dog : public Animal {
 public:
     void makeSound() const override {
-        cout << "¸Û¸Û" << endl;
+        cout << "ë©ë©" << endl;
     }
 };
 
-// ÆÄ»ı Å¬·¡½º: Cat
+// íŒŒìƒ í´ë˜ìŠ¤: Cat
 class Cat : public Animal {
 public:
     void makeSound() const override {
-        cout << "¾ß¿Ë" << endl;
+        cout << "ì•¼ì˜¹" << endl;
     }
 };
-// ÆÄ»ı Å¬·¡½º: Cow
+// íŒŒìƒ í´ë˜ìŠ¤: Cow
 class Cow : public Animal {
 public:
     void makeSound() const override {
-        cout << "À½¸Ş" << endl;
+        cout << "ìŒë©”" << endl;
     }
 };
 int main() {
@@ -41,10 +41,10 @@ int main() {
     Animal* cat = new Cat();
     Animal* cow = new Cow();
 
-    // Å¬·¡½º Æ÷ÀÎÅÍ·Î Animal Å¬·¡½ºÀÇ ÆÄ»ıÅ¬·¡½º¸¦ ÅëÇØ makeSound() ÇÔ¼ö È£Ãâ 
-    dog->makeSound(); // Output: ¿ù¿ù
-    cat->makeSound(); // Output: ¾ß¿Ë
-    cow->makeSound(); // Output: À½¸Ş
+    // í´ë˜ìŠ¤ í¬ì¸í„°ë¡œ Animal í´ë˜ìŠ¤ì˜ íŒŒìƒí´ë˜ìŠ¤ë¥¼ í†µí•´ makeSound() í•¨ìˆ˜ í˜¸ì¶œ 
+    dog->makeSound(); // Output: ì›”ì›”
+    cat->makeSound(); // Output: ì•¼ì˜¹
+    cow->makeSound(); // Output: ìŒë©”
 
     // Cleaning up
     delete dog;
